@@ -60,6 +60,7 @@
             :autoplay="false"
             arrow="never"
             trigger="click"
+            height="420px"
           >
             <el-carousel-item v-for="item in 3" :key="item">
               <div class="rights_container">
@@ -178,24 +179,24 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
 .home_container {
   background: url("../assets/images/home_bg.jpg") no-repeat center 0;
   background-size: cover;
   width: 100%;
   height: 100vh;
   position: relative;
-}
 
-.home_container_main {
-  width: 1600px;
-  height: 635px;
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: space-between;
+  .home_container_main {
+    width: 1600px;
+    height: 635px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 /* 中间区域 start */
@@ -258,11 +259,6 @@ export default {
   height: 5px !important;
 }
 
-/* 轮播图 - 内容区域样式 */
-.el-carousel__container {
-  height: 420px !important;
-}
-
 .rights_container {
   display: flex;
   flex-wrap: wrap;
@@ -284,6 +280,12 @@ export default {
   border-radius: 15px;
   cursor: pointer;
   margin: 0 auto 20px;
+}
+
+/* 按钮特效 */
+.rights_item_img:hover {
+  background: #1fbba7;
+  border-color: #0c4e55;
 }
 
 .rights_item_img img {
@@ -319,8 +321,8 @@ export default {
   height: 190px;
   background-image: linear-gradient(
     to right,
-    rgb(2, 158, 138, 0.7),
-    rgba(3, 95, 89, 0.4)
+    rgba(2, 158, 138, 0.6),
+    rgba(3, 95, 89, 0.3)
   );
   border-radius: 15px;
   display: flex;
@@ -328,10 +330,11 @@ export default {
   cursor: pointer;
 }
 
+/* 按钮特效 */
 .navigation_left li:hover {
   background-image: linear-gradient(
     to right,
-    rgb(2, 158, 138, 0.9),
+    rgba(2, 158, 138, 0.9),
     rgba(3, 95, 89, 0.6)
   );
 }
@@ -339,18 +342,19 @@ export default {
 .navigation_right li {
   background-image: linear-gradient(
     to right,
-    rgba(3, 95, 89, 0.4),
-    rgb(2, 158, 138, 0.7)
+    rgba(3, 95, 89, 0.3),
+    rgba(2, 158, 138, 0.6)
   );
   display: flex;
   flex-direction: row-reverse;
 }
 
+/* 按钮特效 */
 .navigation_right li:hover {
   background-image: linear-gradient(
     to right,
     rgba(3, 95, 89, 0.6),
-    rgb(2, 158, 138, 0.9)
+    rgba(2, 158, 138, 0.9)
   );
 }
 

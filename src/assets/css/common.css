@@ -1,5 +1,7 @@
 :root {
   --border-theme-color: #0cffe0;
+  /* 手术排程管理页 */
+  --manage-theme-color-1: #052a32;
 }
 
 * {

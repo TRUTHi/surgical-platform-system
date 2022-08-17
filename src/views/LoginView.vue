@@ -31,7 +31,7 @@
             ></span>
           </div>
         </el-form-item>
-        <!-- <div class="validate">
+        <div class="validate">
           <el-row :gutter="15">
             <el-col :span="16">
               <el-input v-model="userInfo.code" placeholder="请输入验证码">
@@ -41,12 +41,12 @@
               </el-input>
             </el-col>
             <el-col :span="8">
-              <div class="security_code">
-                <img src="../assets/images/security_code.jpg" alt="" />
+              <div class="security_code" v-if="securityCodeImg">
+                <img :src="securityCodeImg" alt="" />
               </div>
             </el-col>
           </el-row>
-        </div> -->
+        </div>
       </div>
       <!-- 登录按钮 -->
       <div class="login_main_btn">
@@ -94,6 +94,10 @@ export default {
         "icon-yanjing_xianshi_o": false,
         "icon-yanjing_yincang_o": true,
       },
+      // 验证码图片
+      securityCodeImg: '',
+      // 验证码 key
+      securityCodeKey: ''
     };
   },
   methods: {
@@ -144,6 +148,11 @@ export default {
       }, 1500);
     },
   },
+  async created() {
+    const { data: res } = await this.$http.get('/adminapi/Other/captcha')
+    this.securityCodeImg = res.data.captcha
+    this.securityCodeKey = res.data.key
+  }
 };
 </script>
 
@@ -183,6 +192,7 @@ export default {
 
 .security_code img {
   width: 100%;
+  height: 100%;
 }
 
 .login_container {
@@ -197,7 +207,7 @@ export default {
   box-shadow: 0 -5px 30px #40cfb1;
   border-radius: 15px;
   width: 450px;
-  height: 320px;
+  height: 380px;
   background: rgba(0, 0, 0, 0.69);
   position: absolute;
   top: 55%;
@@ -246,7 +256,7 @@ export default {
 }
 
 .u_password {
-  margin: 27px 0;
+  margin: 27px 0 !important;
   position: relative;
 }
 
