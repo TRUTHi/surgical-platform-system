@@ -2,14 +2,74 @@
   <div class="tabs_container">
     <!-- 左侧按钮 -->
     <div class="left-side_btn" @click="clickTheLeftButton">
-      <el-icon :size="17"><DArrowLeft /></el-icon>
+      <svg
+        t="1660871383993"
+        class="icon-left"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="2437"
+        width="16"
+        height="14"
+      >
+        <path
+          d="M152 512l345.6-345.6c14.4-12.8 19.2-33.6 14.4-51.2-4.8-19.2-19.2-33.6-38.4-38.4-4.8-1.6-9.6-1.6-14.4-1.6-14.4 0-27.2 4.8-38.4 16L40 473.6a53.12 53.12 0 0 0 0 75.2l382.4 382.4c20.8 20.8 56 20.8 75.2 0 20.8-20.8 20.8-54.4 0-75.2L152 512z"
+          fill="#333333"
+          p-id="2438"
+        ></path>
+        <path
+          d="M524.8 473.6a53.12 53.12 0 0 0 0 75.2l382.4 382.4c12.8 14.4 33.6 19.2 51.2 14.4 19.2-4.8 33.6-19.2 38.4-38.4 4.8-19.2 0-38.4-14.4-51.2L638.4 512l344-345.6c12.8-12.8 19.2-33.6 14.4-51.2C992 96 977.6 81.6 960 76.8c-4.8-1.6-9.6-1.6-12.8-1.6-14.4 0-27.2 4.8-38.4 16l-384 382.4z"
+          fill="#333333"
+          p-id="2439"
+        ></path>
+      </svg>
     </div>
     <!-- 右侧按钮 -->
     <div class="right-side_btn" v-show="num < 0" @click="clickTheRightButton">
-      <el-icon :size="17"><DArrowRight /></el-icon>
+      <svg
+        t="1660871383993"
+        class="icon-right"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="2437"
+        width="16"
+        height="14"
+      >
+        <path
+          d="M152 512l345.6-345.6c14.4-12.8 19.2-33.6 14.4-51.2-4.8-19.2-19.2-33.6-38.4-38.4-4.8-1.6-9.6-1.6-14.4-1.6-14.4 0-27.2 4.8-38.4 16L40 473.6a53.12 53.12 0 0 0 0 75.2l382.4 382.4c20.8 20.8 56 20.8 75.2 0 20.8-20.8 20.8-54.4 0-75.2L152 512z"
+          fill="#333333"
+          p-id="2438"
+        ></path>
+        <path
+          d="M524.8 473.6a53.12 53.12 0 0 0 0 75.2l382.4 382.4c12.8 14.4 33.6 19.2 51.2 14.4 19.2-4.8 33.6-19.2 38.4-38.4 4.8-19.2 0-38.4-14.4-51.2L638.4 512l344-345.6c12.8-12.8 19.2-33.6 14.4-51.2C992 96 977.6 81.6 960 76.8c-4.8-1.6-9.6-1.6-12.8-1.6-14.4 0-27.2 4.8-38.4 16l-384 382.4z"
+          fill="#333333"
+          p-id="2439"
+        ></path>
+      </svg>
     </div>
-    <div class="tabs_home">
-      <el-icon :size="17"><House /></el-icon>
+    <!-- 主页标签 -->
+    <div
+      class="tabs_home"
+      @click="clickTabItem('home')"
+      :class="[clickHome ? 'isActive' : '']"
+    >
+      <svg
+        t="1660875185510"
+        class="icon"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="2710"
+        width="15"
+        height="15"
+      >
+        <path
+          d="M477.6 119.2L155.68 355.2c-14.88 11.04-23.84 28.32-23.84 46.88v455.84a58.24 58.24 0 0 0 58.24 58.24h240c0.48 0 0.8-0.32 0.8-0.8V700.48c0-42.72 31.04-81.12 73.6-84.96 48-4.32 88.48 33.6 88.48 80.8v219.2c0 0.48 0.32 0.8 0.8 0.8h240a58.24 58.24 0 0 0 58.24-58.24v-456c0-18.56-8.8-36-23.84-46.88L546.4 119.2a58.08 58.08 0 0 0-68.8 0z m-127.2 582.4v133.12c0 0.48-0.32 0.8-0.8 0.8h-136.32c-0.48 0-0.8-0.32-0.8-0.8V413.44c0-0.32 0.16-0.48 0.32-0.64l298.72-218.4c0.32-0.16 0.64-0.16 0.96 0L811.2 412.96c0.16 0.16 0.32 0.32 0.32 0.64v421.28c0 0.48-0.32 0.8-0.8 0.8h-136.32c-0.48 0-0.8-0.32-0.8-0.8v-138.56c0-94.08-80.8-169.6-176.48-160.96-84.16 7.52-146.72 81.76-146.72 166.24z"
+          fill="#333333"
+          p-id="2711"
+        ></path>
+      </svg>
       <span>主页</span>
     </div>
     <!-- 标签主体 -->
@@ -17,17 +77,28 @@
       <div class="inside_box" ref="insideBox">
         <div
           :class="['tab_item', item.checked ? 'isActive' : '']"
-          v-for="(item, idx) in tabItems"
+          v-for="item in tabItems"
           :key="item.id"
           @click="clickTabItem(item)"
         >
           <span>{{ item.name }}</span>
-          <el-icon
-            v-on:click="removeItem(idx)"
-            v-show="item.checked"
-            :size="17"
-            ><Close
-          /></el-icon>
+          <svg
+            t="1660868938210"
+            class="icon-close"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2029"
+            width="12"
+            height="12"
+            v-on:click.stop="removeItem(item)"
+          >
+            <path
+              d="M590.08 512L889.6 811.52a55.136 55.136 0 0 1 0 78.08 55.136 55.136 0 0 1-78.08 0L512 590.08 212.48 889.6a55.136 55.136 0 0 1-78.08 0 55.136 55.136 0 0 1 0-78.08L433.92 512 134.4 212.48a55.136 55.136 0 0 1 0-78.08 55.136 55.136 0 0 1 78.08 0L512 433.92 811.52 134.4a55.136 55.136 0 0 1 78.08 0 55.136 55.136 0 0 1 0 78.08L590.08 512z"
+              fill="#999999"
+              p-id="2030"
+            ></path>
+          </svg>
         </div>
       </div>
     </div>
@@ -50,15 +121,22 @@ export default {
       rightTarget: 0,
       // 外层盒子跟里层盒子的宽度差
       num: 0,
+      clickHome: true,
+      tabItemsLength: 0,
     };
   },
   methods: {
-    removeItem(idx) {
-      this.tabItems.splice(idx, 1);
+    removeItem(item) {
+      console.log(item);
+      this.$emit("remove-item", item);
     },
     clickTabItem(item) {
+      if (typeof item === "string") {
+        this.clickHome = true;
+      } else {
+        this.clickHome = false;
+      }
       this.$emit("current-item", item);
-      // this.currentTabItem = idx;
     },
     // 点击左侧滑动按钮
     clickTheLeftButton() {
@@ -91,7 +169,15 @@ export default {
   watch: {
     tabItems: {
       deep: true,
-      handler: function () {
+      handler: function (val) {
+        if (this.tabItemsLength !== val.length) {
+          // this.clickHome = false;
+          this.clickHome = !this.clickHome;
+          this.tabItemsLength = val.length;
+        } else {
+          // 表示并没有新增标签, 只是其他的被选中
+          this.clickHome = false;
+        }
         // 点击标签
         // this.clickTabItem(this.tabItems.length - 1);
         // 外层盒子
@@ -120,6 +206,14 @@ export default {
       },
     },
   },
+  created() {
+    const previousIndex = sessionStorage.getItem("previousIndex");
+    if (!previousIndex) {
+      this.clickHome = true;
+    } else {
+      this.clickHome = previousIndex.includes("homepage");
+    }
+  },
 };
 </script>
 
@@ -135,6 +229,15 @@ export default {
     top: 0;
     cursor: pointer;
     z-index: 1;
+    width: 40px;
+    height: 40px;
+
+    .icon-left {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .right-side_btn {
@@ -143,12 +246,15 @@ export default {
     top: 0;
     cursor: pointer;
     z-index: 1;
-  }
-
-  .left-side_btn .el-icon,
-  .right-side_btn .el-icon {
     width: 40px;
     height: 40px;
+
+    .icon-right {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
   }
 
   .tabs_home {
@@ -164,7 +270,15 @@ export default {
     border: 1px solid #f6f6f6;
     box-sizing: border-box;
 
-    .el-icon {
+    &.isActive {
+      background: rgb(244, 244, 244);
+    }
+
+    &:hover {
+      background: #f4f4f4;
+    }
+
+    svg {
       margin: 0 10px 0 15px;
     }
 
@@ -194,7 +308,6 @@ export default {
         display: flex;
         align-items: center;
         flex-shrink: 0;
-        cursor: pointer;
 
         &:hover {
           background: rgb(244, 244, 244);
@@ -205,8 +318,15 @@ export default {
           margin: 0 5px 0 13px;
         }
 
-        .el-icon {
+        .icon-close {
           cursor: pointer;
+          margin-top: 2px;
+          padding: 3px;
+
+          &:hover {
+            background: #ccc;
+            border-radius: 14px;
+          }
         }
       }
 

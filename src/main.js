@@ -17,10 +17,19 @@ import store from './store'
 
 // 网络请求库
 import axios from 'axios'
-axios.defaults.baseURL = 'http://ss.wiwo.top'
+// axios.defaults.baseURL = 'http://ss.wiwo.top'
+axios.defaults.baseURL = '/api'
+axios.interceptors.request.use(config => {
+    if (location.hash !== '#/') {
+        config.headers.authorization = localStorage.getItem('token');
+    }
+    return config;
+})
 
 const app = createApp(App).use(store)
+// 全局注入 axios
 app.config.globalProperties.$http = axios
+
 app.use(router).use(ElementPlus).mount('#app')
 
 // element-plus 全局注册所有图标
